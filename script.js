@@ -105,4 +105,20 @@ document.addEventListener('DOMContentLoaded', () => {
         link.click();
         document.body.removeChild(link);
     };
+
+    // Subject Expertise Box Toggle
+    function toggleExpertise() {
+        const content = document.getElementById('expertiseContent');
+        const icon = document.getElementById('toggleIcon');
+      
+        content.classList.toggle('open');
+        icon.classList.toggle('rotate');
+      
+        if (content.classList.contains('open')) {
+          icon.innerHTML = '&#9650;'; // ▲ icon
+        } else {
+          icon.innerHTML = '&#9660;'; // ▼ icon
+        }
+      }
+      
 }); 
