@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Resources functionality
     const uploadForm = document.getElementById('uploadForm');
     const resourcesContainer = document.getElementById('resourcesContainer');
 
@@ -104,71 +105,4 @@ document.addEventListener('DOMContentLoaded', () => {
         link.click();
         document.body.removeChild(link);
     };
-
-    // Gallery functionality
-    const galleryGrid = document.querySelector('.gallery-grid');
-    const loadMoreBtn = document.querySelector('.load-more-btn');
-    const galleryUploadForm = document.getElementById('galleryUploadForm');
-    let currentPage = 1;
-    const imagesPerPage = 12;
-    let allImages = JSON.parse(localStorage.getItem('galleryImages') || '[]');
-
-    // Load initial images
-    if (allImages.length > 0) {
-        loadImages();
-    }
-
-    // Handle image upload
-    galleryUploadForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const fileInput = document.getElementById('imageUpload');
-        const files = fileInput.files;
-
-        if (files.length === 0) {
-            alert('Please select at least one image');
-            return;
-        }
-
-        Array.from(files).forEach(file => {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                allImages.push(e.target.result);
-                localStorage.setItem('galleryImages', JSON.stringify(allImages));
-                
-                // Clear the grid and reload images
-                galleryGrid.innerHTML = '';
-                currentPage = 1;
-                loadImages();
-            };
-            reader.readAsDataURL(file);
-        });
-
-        // Reset the form
-        fileInput.value = '';
-    });
-
-    function loadImages() {
-        const start = (currentPage - 1) * imagesPerPage;
-        const end = start + imagesPerPage;
-        const imagesToLoad = allImages.slice(start, end);
-
-        imagesToLoad.forEach(imageData => {
-            const galleryItem = document.createElement('div');
-            galleryItem.className = 'gallery-item';
-            galleryItem.innerHTML = `<img src="${imageData}" alt="Gallery Image">`;
-            galleryGrid.appendChild(galleryItem);
-        });
-
-        // Show/hide load more button
-        if (end >= allImages.length) {
-            loadMoreBtn.style.display = 'none';
-        } else {
-            loadMoreBtn.style.display = 'block';
-        }
-    }
-
-    loadMoreBtn.addEventListener('click', () => {
-        currentPage++;
-        loadImages();
-    });
 }); 

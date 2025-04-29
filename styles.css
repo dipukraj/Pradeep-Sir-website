@@ -1,0 +1,13 @@
+/* Research Section */
+.research {
+    padding: 2rem;
+    background-color: #f8f9fa;
+}
+
+.research-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Contact Section */ 
