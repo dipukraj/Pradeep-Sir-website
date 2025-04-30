@@ -130,36 +130,31 @@
         </div>
     </section>
 
-    <section id="subject-expertise" class="subject-expertise">
-        <div class="main-expertise-box">
-            <div class="header-toggle" onclick="toggleExpertise()">
-                <h2>Subject Expertise</h2>
-                <span class="toggle-icon" id="toggleIcon">▼</span>
+    <section id="education" class="section">
+        <h2 onclick="toggleEducation()">Subject Expertise &#9662;</h2>
+      
+        <div id="educationContent" style="display: none;">
+          <div class="accordion">
+            <button class="accordion-btn" id="edu1-btn" onclick="toggleSection('edu1')">Bihar Engineering University - Patna (2022–2026)</button>
+            <div id="edu1" class="panel">
+               
             </div>
-            <div class="expertise-content" id="expertiseContent">
-                <div class="expertise-box">
-                    <h3>Subject 1</h3>
-                    <p>Description of subject expertise</p>
-                </div>
-                <div class="expertise-box">
-                    <h3>Subject 2</h3>
-                    <p>Description of subject expertise</p>
-                </div>
-                <div class="expertise-box">
-                    <h3>Subject 3</h3>
-                    <p>Description of subject expertise</p>
-                </div>
-                <div class="expertise-box">
-                    <h3>Subject 4</h3>
-                    <p>Description of subject expertise</p>
-                </div>
-                <div class="expertise-box">
-                    <h3>Subject 5</h3>
-                    <p>Description of subject expertise</p>
-                </div>
+      
+            <button class="accordion-btn" id="edu2-btn" onclick="toggleSection('edu2')">Senior Secondary from Bihar School Examination Board - Patna (2018–2020)</button>
+            <div id="edu2" class="panel">
+              
             </div>
+    
+            <button class="accordion-btn" id="edu3-btn" onclick="toggleSection('edu3')">Secondary from Bihar School Examination Board - Patna (2017–2018)</button>
+            <div id="edu3" class="panel">
+
+                <button class="accordion-btn" id="edu3-btn" onclick="toggleSection('edu3')">Secondary from Bihar School Examination Board - Patna (2017–2018)</button>
+                <div id="edu3" class="panel">
+               
+            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
     <section id="publications" class="publications">
         <h2>Publications</h2>

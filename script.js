@@ -106,19 +106,70 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.removeChild(link);
     };
 
-    // Subject Expertise Box Toggle
-    function toggleExpertise() {
-        const content = document.getElementById('expertiseContent');
-        const icon = document.getElementById('toggleIcon');
-      
-        content.classList.toggle('open');
-        icon.classList.toggle('rotate');
-      
-        if (content.classList.contains('open')) {
-          icon.innerHTML = '&#9650;'; // ▲ icon
+    // Subject Expertise Toggle Function
+    const headerToggle = document.querySelector('.header-toggle');
+    const expertiseContent = document.getElementById('expertiseContent');
+    const toggleIcon = document.getElementById('toggleIcon');
+
+    headerToggle.addEventListener('click', () => {
+        expertiseContent.classList.toggle('open');
+        toggleIcon.classList.toggle('rotate');
+        
+        if (expertiseContent.classList.contains('open')) {
+            toggleIcon.innerHTML = '▲';
+            loadExpertise(); // Load expertise data when opening
         } else {
-          icon.innerHTML = '&#9660;'; // ▼ icon
+            toggleIcon.innerHTML = '▼';
         }
-      }
-      
+    });
+
+    // Load expertise data
+    function loadExpertise() {
+        const expertiseData = JSON.parse(localStorage.getItem('expertiseData') || '[]');
+        const expertiseContent = document.getElementById('expertiseContent');
+        
+        if (expertiseData.length > 0) {
+            expertiseContent.innerHTML = expertiseData.map((item, index) => `
+                <div class="expertise-box" data-index="${index}">
+                    <input type="text" class="expertise-title" value="${item.title}" placeholder="Enter subject name">
+                    <textarea class="expertise-description" placeholder="Enter subject description">${item.description}</textarea>
+                </div>
+            `).join('');
+        } else {
+            expertiseContent.innerHTML = Array(5).fill().map((_, index) => `
+                <div class="expertise-box" data-index="${index}">
+                    <input type="text" class="expertise-title" placeholder="Enter subject name">
+                    <textarea class="expertise-description" placeholder="Enter subject description"></textarea>
+                </div>
+            `).join('');
+        }
+    }
+
+    // Save expertise data
+    function saveExpertise() {
+        const expertiseBoxes = document.querySelectorAll('.expertise-box');
+        const expertiseData = Array.from(expertiseBoxes).map(box => ({
+            title: box.querySelector('.expertise-title').value,
+            description: box.querySelector('.expertise-description').value
+        }));
+        
+        localStorage.setItem('expertiseData', JSON.stringify(expertiseData));
+        alert('Subject expertise saved successfully!');
+    }
+
+    // Add save button
+    const saveButton = document.createElement('button');
+    saveButton.className = 'save-expertise-btn';
+    saveButton.textContent = 'Save Changes';
+    saveButton.onclick = saveExpertise;
+    document.querySelector('.subject-expertise').appendChild(saveButton);
 }); 
+
+
+
+
+// Education section toggle
+function toggleEducation() {
+    const content = document.getElementById("educationContent");
+    content.style.display = content.style.display === "none" ? "block" : "none";
+  }

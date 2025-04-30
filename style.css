@@ -792,39 +792,45 @@ footer {
     width: 100%;
     margin: 40px auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     font-family: Arial, sans-serif;
 }
 
 .main-expertise-box {
-    width: 300px;
+    width: 200px;
     border: 2px solid #333;
     border-radius: 8px;
-    padding: 15px;
+    padding: 0;
     background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 .header-toggle {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;60
     align-items: center;
     cursor: pointer;
-    padding: 10px;
+    padding: 10px 15px;
     background: linear-gradient(135deg, #6B73FF, #000DFF);
     color: white;
     border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.header-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .header-toggle h2 {
     margin: 0;
-    font-size: 20px;
+    font-size: 16px;
     color: white;
 }
 
 .toggle-icon {
-    font-size: 20px;
+    font-size: 14px;
     transition: transform 0.3s ease;
 }
 
@@ -837,6 +843,7 @@ footer {
     overflow: hidden;
     transition: max-height 0.5s ease;
     margin-top: 10px;
+    width: 100%;
 }
 
 .expertise-content.open {
@@ -845,7 +852,7 @@ footer {
 
 .expertise-box {
     margin: 10px 0;
-    padding: 12px 15px;
+    padding: 15px;
     border-left: 4px solid #6B73FF;
     background-color: white;
     border-radius: 6px;
@@ -858,22 +865,61 @@ footer {
     background-color: #f0f0f0;
 }
 
-.expertise-box h3 {
-    margin: 0 0 5px;
+.expertise-title {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     font-size: 16px;
+    font-weight: bold;
     color: #2c3e50;
 }
 
-.expertise-box p {
-    margin: 0;
-    color: #666;
+.expertise-description {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
     font-size: 14px;
+    color: #666;
+    resize: vertical;
+    min-height: 60px;
+}
+
+.save-expertise-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #6B73FF, #000DFF);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.save-expertise-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 @media (max-width: 768px) {
     .main-expertise-box {
         width: 90%;
-        max-width: 300px;
     }
 }
+
+
+
+#subject-expertise-btn {
+    background-color: #8b5cf6;
+    color: #0f172a;
+  }
+  
+  #subject-expertise-btn:hover {
+    background-color: #7c3aed;
+  }
+  
+
   
