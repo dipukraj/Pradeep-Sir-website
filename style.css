@@ -320,19 +320,78 @@ section h2::after {
 }
 
 .publications {
-    background-color: white;
+    background-color: #ffffff;
+    padding: 6rem 2rem;
 }
 
 .publications h2 {
+    text-align: center;
+    margin-bottom: 3rem;
     color: var(--primary-color);
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 1rem;
 }
 
-.publications-grid {
+.publications h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.publications-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+}
+
+.publication-box {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.publication-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.publication-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+.publication-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.publication-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.publication-list li::before {
+    content: '•';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-size: 1.2rem;
 }
 
 .research {
@@ -347,6 +406,64 @@ section h2::after {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+}
+
+.professional-experience {
+    background-color: #f8f9fa;
+    padding: 6rem 2rem;
+}
+
+.professional-experience h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.professional-experience h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.experience-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.experience-box {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.experience-box p {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.experience-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
 }
 
 .resources {
@@ -790,136 +907,56 @@ footer {
 
 .subject-expertise {
     width: 100%;
+    max-width: 800px;
     margin: 40px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: Arial, sans-serif;
-}
-
-.main-expertise-box {
-    width: 200px;
-    border: 2px solid #333;
-    border-radius: 8px;
-    padding: 0;
-    background-color: #f9f9f9;
+    background: white;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.header-toggle {
-    display: flex;
-    justify-content: space-between;60
-    align-items: center;
-    cursor: pointer;
-    padding: 10px 15px;
-    background: linear-gradient(135deg, #6B73FF, #000DFF);
-    color: white;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-}
-
-.header-toggle:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-.header-toggle h2 {
-    margin: 0;
-    font-size: 16px;
-    color: white;
-}
-
-.toggle-icon {
-    font-size: 14px;
-    transition: transform 0.3s ease;
-}
-
-.rotate {
-    transform: rotate(180deg);
-}
-
-.expertise-content {
-    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s ease;
-    margin-top: 10px;
-    width: 100%;
 }
 
-.expertise-content.open {
-    max-height: 1000px;
+.expertise-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
 
 .expertise-box {
-    margin: 10px 0;
-    padding: 15px;
-    border-left: 4px solid #6B73FF;
-    background-color: white;
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
+    width: calc(50% - 20px);
+    min-width: 250px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
 .expertise-box:hover {
-    transform: translateX(5px);
-    background-color: #f0f0f0;
+    transform: translateY(-5px);
 }
 
-.expertise-title {
-    width: 100%;
-    padding: 8px;
+.expertise-box h3 {
+    color: var(--primary-color);
     margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #2c3e50;
+    font-size: 1.2rem;
 }
 
-.expertise-description {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
+.expertise-box p {
     color: #666;
-    resize: vertical;
-    min-height: 60px;
-}
-
-.save-expertise-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #6B73FF, #000DFF);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
-}
-
-.save-expertise-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 @media (max-width: 768px) {
-    .main-expertise-box {
-        width: 90%;
+    .expertise-box {
+        width: 100%;
     }
 }
 
+ 
 
 
-#subject-expertise-btn {
-    background-color: #8b5cf6;
-    color: #0f172a;
-  }
-  
-  #subject-expertise-btn:hover {
-    background-color: #7c3aed;
-  }
-  
 
   

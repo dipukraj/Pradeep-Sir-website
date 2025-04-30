@@ -163,13 +163,23 @@ document.addEventListener('DOMContentLoaded', () => {
     saveButton.textContent = 'Save Changes';
     saveButton.onclick = saveExpertise;
     document.querySelector('.subject-expertise').appendChild(saveButton);
+
+    function toggleExpertise() {
+        const content = document.querySelector('.expertise-content');
+        const icon = document.querySelector('.toggle-icon');
+        
+        content.classList.toggle('open');
+        icon.classList.toggle('rotate');
+        
+        if (content.classList.contains('open')) {
+            icon.innerHTML = '▲';
+        } else {
+            icon.innerHTML = '▼';
+        }
+    }
 }); 
 
 
 
 
-// Education section toggle
-function toggleEducation() {
-    const content = document.getElementById("educationContent");
-    content.style.display = content.style.display === "none" ? "block" : "none";
-  }
+ 
