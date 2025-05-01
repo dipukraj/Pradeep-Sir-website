@@ -164,17 +164,23 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
 }
 
 .profile-photo-container {
     margin-bottom: 2rem;
     display: flex;
     justify-content: center;
+    margin-top: 60px;
 }
 
 .profile-photo {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid white;
@@ -188,8 +194,8 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
     -webkit-background-clip: text;
     background-clip: text;
@@ -200,7 +206,7 @@ body {
 }
 
 .hero-content h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #ffffff;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
@@ -209,7 +215,7 @@ body {
 }
 
 .hero-content p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: #ffffff;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
     font-weight: 400;
@@ -224,6 +230,58 @@ body {
     }
     100% {
         background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 0 1rem;
+    }
+
+    .profile-photo-container {
+        margin-top: 80px;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-content h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-photo-container {
+        margin-top: 100px;
+    }
+
+    .profile-photo {
+        width: 130px;
+        height: 130px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
     }
 }
 
