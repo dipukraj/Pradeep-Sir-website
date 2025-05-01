@@ -159,6 +159,34 @@ body {
     padding: 0 2rem;
 }
 
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.profile-photo-container {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
 .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
@@ -226,7 +254,7 @@ section h2::after {
 }
 
 .about {
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
     padding: 6rem 2rem;
 }
 
@@ -320,7 +348,7 @@ section h2::after {
 }
 
 .publications {
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
     padding: 6rem 2rem;
 }
 
@@ -395,7 +423,8 @@ section h2::after {
 }
 
 .research {
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    padding: 6rem 2rem;
 }
 
 .research h2 {
@@ -409,7 +438,7 @@ section h2::after {
 }
 
 .professional-experience {
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
     padding: 6rem 2rem;
 }
 
@@ -541,7 +570,8 @@ section h2::after {
 }
 
 .contact {
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    padding: 6rem 2rem;
 }
 
 .contact h2 {
@@ -618,7 +648,7 @@ footer {
 }
 
 .skills {
-    background-color: white;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
     padding: 6rem 2rem;
 }
 
@@ -716,7 +746,7 @@ footer {
 }
 
 .education {
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
     padding: 6rem 2rem;
 }
 
@@ -846,8 +876,8 @@ footer {
 
 /* Gallery Section */
 .gallery {
-    padding: 4rem 2rem;
-    background-color: white;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    padding: 6rem 2rem;
 }
 
 .gallery h2 {
@@ -906,13 +936,8 @@ footer {
 }
 
 .subject-expertise {
-    width: 100%;
-    max-width: 800px;
-    margin: 40px auto;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    padding: 6rem 2rem;
 }
 
 .expertise-container {
@@ -924,32 +949,98 @@ footer {
 }
 
 .expertise-box {
-    width: calc(50% - 20px);
-    min-width: 250px;
+    width: calc(33.33% - 20px);
+    min-width: 200px;
     padding: 20px;
-    background: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.expertise-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #6B73FF, #000DFF);
+    transform: scaleX(0);
+    transform-origin: left;
     transition: transform 0.3s ease;
 }
 
 .expertise-box:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #f8f9fa 0%, #e3f2fd 100%);
+}
+
+.expertise-box:hover::before {
+    transform: scaleX(1);
 }
 
 .expertise-box h3 {
-    color: var(--primary-color);
+    color: #2c3e50;
     margin-bottom: 10px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.expertise-box h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, #6B73FF, #000DFF);
+    transition: width 0.3s ease;
+}
+
+.expertise-box:hover h3::after {
+    width: 50px;
 }
 
 .expertise-box p {
-    color: #666;
+    color: #4a5568;
     font-size: 0.9rem;
     line-height: 1.5;
+    margin: 0;
+}
+
+/* Add a subtle pattern overlay */
+.expertise-box::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        rgba(107, 115, 255, 0.05) 0%,
+        rgba(0, 13, 255, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.expertise-box:hover::after {
+    opacity: 1;
 }
 
 @media (max-width: 768px) {
+    .expertise-box {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
     .expertise-box {
         width: 100%;
     }
