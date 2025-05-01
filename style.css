@@ -152,7 +152,7 @@ body {
     background-size: cover;
     background-position: center;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     text-align: center;
     color: white;
@@ -167,15 +167,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: 100vh;
+    padding-top: 80px;
 }
 
 .profile-photo-container {
     margin-bottom: 2rem;
     display: flex;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 0;
 }
 
 .profile-photo {
@@ -246,10 +247,11 @@ body {
         padding: 0 1rem;
         justify-content: flex-start;
         min-height: auto;
+        padding-top: 80px;
     }
 
     .profile-photo-container {
-        margin-top: 80px;
+        margin-top: 0;
         margin-bottom: 1.5rem;
     }
 
@@ -282,10 +284,11 @@ body {
         padding: 0 1rem;
         justify-content: flex-start;
         min-height: auto;
+        padding-top: 80px;
     }
 
     .profile-photo-container {
-        margin-top: 100px;
+        margin-top: 0;
         margin-bottom: 1.5rem;
     }
 
