@@ -1,0 +1,25 @@
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore node modules if you ever use npm in future
+node_modules/
+
+# Ignore build or dist folders (if any)
+dist/
+build/
+
+# Ignore log files
+*.log
+
+# Ignore environment files (if any)
+.env
+.env.local
+
+# Ignore VS Code settings (optional)
+.vscode/
+
+# Ignore OS generated files
+ehthumbs.db
+Icon?
+Desktop.ini
