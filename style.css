@@ -756,7 +756,7 @@ footer {
     background-color: var(--primary-color);
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 @media (max-width: 768px) {
